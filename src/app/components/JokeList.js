@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/JokeList.css';
 import loadJoke from '../utils/loadJoke';
 import Joke from './Joke';
+import Loader from './Loader';
 
 class JokeList extends Component {
   static defaultProps = {
@@ -31,7 +32,7 @@ class JokeList extends Component {
       ? this.state.jokes.map(j => <Joke joke={j.joke} votes={j.votes} />)
       : undefined;
 
-    return this.state.hasLoaded ? (
+    return (
       <div className="JokeList">
         <div className="JokeList-sidebar">
           <h1 className="JokeList-title">
@@ -41,23 +42,12 @@ class JokeList extends Component {
             src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg"
             alt="laughig emoji"
           />
-          <button className="JokeList-getmore">Fetch Jokes</button>
-        </div>
-        <div className="JokeList-jokes">{jokesList}</div>
-      </div>
-    ) : (
-      <div className="JokeList">
-        <div className="JokeList-sidebar">
-          <h1 className="JokeList-title">
-            <span>Dad</span> Jokes
-          </h1>
-          <img
-            src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg"
-            alt="laughig emoji"
-          />
-          <button disabled className="JokeList-getmore">
-            Loading
+          <button className="JokeList-getmore" disabled={!this.state.hasLoaded}>
+            Fetch Jokes
           </button>
+        </div>
+        <div className="JokeList-jokes">
+          {this.state.hasLoaded ? jokesList : <Loader />}
         </div>
       </div>
     );
