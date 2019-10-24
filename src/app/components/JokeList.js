@@ -4,6 +4,7 @@ import loadJoke from '../utils/loadJoke';
 import Joke from './Joke';
 import Loader from './Loader';
 import uuid from 'uuid';
+import Sidebar from './Sidebar';
 
 class JokeList extends Component {
   static defaultProps = {
@@ -54,18 +55,7 @@ class JokeList extends Component {
 
     return (
       <div className="JokeList">
-        <div className="JokeList-sidebar">
-          <h1 className="JokeList-title">
-            <span>Dad</span> Jokes
-          </h1>
-          <img
-            src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg"
-            alt="laughing emoji"
-          />
-          <button className="JokeList-getmore" disabled={!this.state.hasLoaded}>
-            {this.state.hasLoaded ? 'Fetch Jokes' : 'Fetching Jokes'}
-          </button>
-        </div>
+        <Sidebar hasLoaded={this.state.hasLoaded} />
         <div className="JokeList-jokes">
           {this.state.hasLoaded ? jokesList : <Loader />}
         </div>

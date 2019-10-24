@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/Joke.css';
+import Emoji from './Emoji';
 import getColor from '../utils/getColor';
+import getEmoji from '../utils/getEmoji';
 
 function Joke({ joke, votes, id, handleVote }) {
   return (
@@ -16,11 +18,8 @@ function Joke({ joke, votes, id, handleVote }) {
         />
       </div>
       <div className="Joke-text">{joke}</div>
-      <div className="Joke-smiley">
-        <i
-          className="em em-rolling_on_the_floor_laughing"
-          aria-label="ROLLING ON THE FLOOR LAUGHING"
-        ></i>
+      <div className="Joke-emoji">
+        <Emoji i={getEmoji(votes)} />
       </div>
     </div>
   );

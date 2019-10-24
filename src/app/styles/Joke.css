@@ -76,14 +76,14 @@
   }
 }
 
-.Joke-smiley {
+.Joke-emoji {
   font-size: 3rem;
   margin-left: auto;
   border-radius: 50%;
   box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
 }
 
-.Joke-smiley:hover {
+.Joke-emoji:hover {
   animation-name: spin;
   animation-duration: 0.7s;
   animation-timing-function: ease-in-out;
