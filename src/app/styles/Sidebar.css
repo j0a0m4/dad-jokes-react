@@ -12,6 +12,7 @@
 }
 
 .Sidebar img {
+  height: auto;
   width: 50%;
   border-radius: 50%;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
@@ -24,7 +25,7 @@
 }
 
 .Sidebar-title {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 2rem;
   color: white;
   font-weight: 300;
@@ -35,13 +36,10 @@
   letter-spacing: 0;
 }
 
-.Sidebar-spinner {
-  color: white;
-  text-align: center;
-}
-
 .Sidebar-getmore {
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
   width: 50%;
   border-radius: 2rem;
   padding: 1rem 2rem;
